@@ -1,0 +1,50 @@
+{
+  "Mathematics": [
+    {
+      "title": "Algebra Basics",
+      "content": "Algebra involves using letters to represent numbers and forming equations to solve problems.",
+      "file": "./assets/files/algebra-basics.pdf"
+    },
+    {
+      "title": "Quadratic Equations",
+      "content": "Quadratic equations are of the form ax² + bx + c = 0. They can be solved by factoring or the quadratic formula.",
+      "file": "./assets/files/quadratic-equations.pdf"
+    }
+  ],
+  "Biology": [
+    {
+      "title": "Cell Structure",
+      "content": "Cells are the basic units of life containing organelles such as the nucleus, mitochondria, and cytoplasm.",
+      "file": "./assets/files/cell-structure.pdf"
+    },
+    {
+      "title": "Photosynthesis",
+      "content": "Photosynthesis is the process where plants use sunlight to make food from carbon dioxide and water.",
+      "file": "./assets/files/photosynthesis.docx"
+    }
+  ],
+    "History": [
+        {
+        "title": "World War II Overview",
+        "content": "World War II was a global conflict from 1939 to 1945 involving most of the world's nations.",
+        "file": "./assets/files/ww2-overview.pdf"
+        },
+        {
+        "title": "Ancient Civilizations",
+        "content": "Ancient civilizations like Mesopotamia, Egypt, and the Indus Valley laid the foundations for modern society.",
+        "file": "./assets/files/ancient-civilizations.pptx"
+        }
+    ],
+    "Chemistry": [
+        {
+        "title": "Periodic Table Basics",
+        "content": "The periodic table organizes elements based on their atomic number and properties.",
+        "file": "./assets/files/periodic-table-basics.pdf"
+        },
+        {
+        "title": "Chemical Bonding",
+        "content": "Chemical bonding involves the interaction between atoms to form molecules through ionic or covalent bonds.",
+        "file": "./assets/files/chemical-bonding.docx"
+        }
+    ]
+}

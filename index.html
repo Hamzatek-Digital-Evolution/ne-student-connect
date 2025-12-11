@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NE Students Connect | Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <!--  NAVBAR -->
+    <header class="bg-white shadow-sm">
+      <div
+        class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16"
+      >
+        <!-- Logo Placeholder -->
+        <a href="index.html" class="flex items-center space-x-2">
+          <div
+            class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-lg"
+          >
+            Logo
+          </div>
+          <span class="font-bold text-xl text-teal-700"
+            >NE Students Connect</span
+          >
+        </a>
+
+        <!-- Nav Links -->
+        <nav class="space-x-6 hidden md:flex font-medium">
+          <a href="index.html" class="text-green-600 font-semibold">Home</a>
+          <a href="subjects.html" class="hover:text-green-600">Subjects</a>
+          <a href="notes.html" class="hover:text-green-600">Notes</a>
+          <a href="past-papers.html" class="hover:text-green-600"
+            >Past Papers</a
+          >
+          <a href="tips.html" class="hover:text-green-600">Study Tips</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--  HERO SECTION -->
+    <section
+      class="bg-green-100 flex flex-col-reverse md:flex-row items-center justify-between py-16 px-6 md:px-12 lg:px-20 flex-grow"
+    >
+      <!-- Left Text Content -->
+      <div class="md:w-1/2 space-y-6 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-bold text-teal-700 leading-tight">
+          Empowering Northeastern Students with Free Study Resources
+        </h1>
+        <p class="text-gray-700 text-lg">
+          Access notes, past papers, and study tips — all in one place, designed
+          to help every student learn and succeed.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+        >
+          <a
+            href="subjects.html"
+            class="bg-green-600 text-black font-semibold px-6 py-3 rounded-lg hover:bg-green-700"
+            >Explore Subjects</a
+          >
+          <a
+            href="past-papers.html"
+            class="border border-green-600 bg-green-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-100 hover:text-black"
+            >Download Papers</a
+          >
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <img
+          src="student.png"
+          alt="Students studying"
+          class="w-full rounded-lg shadow-md"
+        />
+      </div>
+    </section>
+
+    <!--  ABOUT SECTION -->
+    <section
+      class="max-w-7xl mx-auto px-6 md:px-12 py-12 text-center md:text-left"
+    >
+      <h2 class="text-3xl font-bold text-teal-700 mb-4">
+        About NE Students Connect
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-3xl">
+        NE Students Connect is an educational resource hub dedicated to students
+        in Northeastern Kenya. It provides free access to KCSE and college past
+        papers, study notes, and motivational tips to help students excel
+        academically and build a strong learning culture in the region.
+      </p>
+    </section>
+
+    <!--  FEATURED SUBJECTS -->
+    <section class="bg-green-100 py-16">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <h2 class="text-3xl font-bold text-teal-700 text-center mb-10">
+          Featured Subjects
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Subject Card -->
+          <div
+            class="bg-teal-50 p-6 rounded-xl shadow hover:shadow-md text-center"
+          >
+            <h3 class="text-xl font-semibold text-teal-700 mb-2">
+              Mathematics
+            </h3>
+            <p class="text-gray-600">Notes, Exercises & Past Papers</p>
+          </div>
+          <div
+            class="bg-teal-50 p-6 rounded-xl shadow hover:shadow-md text-center"
+          >
+            <h3 class="text-xl font-semibold text-teal-700 mb-2">English</h3>
+            <p class="text-gray-600">Grammar, Comprehension & Writing</p>
+          </div>
+          <div
+            class="bg-teal-50 p-6 rounded-xl shadow hover:shadow-md text-center"
+          >
+            <h3 class="text-xl font-semibold text-teal-700 mb-2">Biology</h3>
+            <p class="text-gray-600">Class Notes & KCSE Papers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  MOTIVATIONAL QUOTE SECTION -->
+    <section class="bg-teal-700 py-12 text-center text-grey-100 px-6">
+      <h3 class="text-2xl font-semibold mb-4">
+        "Education is the key to unlock the golden door of freedom."
+      </h3>
+      <p class="text-sm opacity-90">— George Washington Carver</p>
+    </section>
+
+    <!--  FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 py-10 mt-auto">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Column 1: Logo & Description -->
+        <div>
+          <div class="flex items-center space-x-2 mb-3">
+            <div
+              class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold"
+            >
+              Logo
+            </div>
+            <span class="font-semibold text-lg text-white"
+              >NE Students Connect</span
+            >
+          </div>
+          <p class="text-sm text-gray-400">
+            A platform providing free academic materials, past papers, and study
+            support for Northeastern Kenya students.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li>
+              <a href="subjects.html" class="hover:text-white">Subjects</a>
+            </li>
+            <li><a href="notes.html" class="hover:text-white">Notes</a></li>
+            <li>
+              <a href="past-papers.html" class="hover:text-white"
+                >Past Papers</a
+              >
+            </li>
+            <li><a href="tips.html" class="hover:text-white">Study Tips</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div>
+          <h4 class="font-semibold text-white mb-3">Contact</h4>
+          <p class="text-sm text-gray-400">Email: info@nestudentsconnect.com</p>
+          <p class="text-sm text-gray-400 mt-1">Phone: +254 700 000 000</p>
+          <p class="text-sm text-gray-400 mt-3">
+            Built by <span class="text-teal-400 font-semibold">Hamzatek</span>
+          </p>
+        </div>
+      </div>
+      <div
+        class="text-center text-gray-500 text-xs mt-10 border-t border-gray-700 pt-4"
+      >
+        &copy; 2025 NE Students Connect. All Rights Reserved.
+      </div>
+    </footer>
+  </body>
+</html>

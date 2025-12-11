@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Tips | NE Students Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!--  NAVBAR -->
+    <header class="bg-white shadow-sm">
+      <div
+        class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16"
+      >
+        <div class="flex items-center space-x-2">
+          <div
+            class="w-10 h-10 bg-green-500 text-white rounded-lg flex items-center justify-center font-bold"
+          >
+            LOGO
+          </div>
+          <span class="font-semibold text-lg">NE Students Connect</span>
+        </div>
+        <nav class="space-x-6 font-medium">
+          <a href="index.html" class="hover:text-green-600">Home</a>
+          <a href="subjects.html" class="hover:text-green-600">Subjects</a>
+          <a href="notes.html" class="hover:text-green-600">Notes</a>
+          <a href="pastpapers.html" class="hover:text-green-600">Past Papers</a>
+          <a href="study-tips.html" class="text-green-600 font-semibold"
+            >Study Tips</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!--  HERO SECTION -->
+    <section class="bg-green-100 py-12 text-center">
+      <h1 class="text-3xl font-bold mb-2 text-green-700">
+        Study Tips & Motivation
+      </h1>
+      <p class="text-gray-700">
+        Share and read inspiring tips from fellow students.
+      </p>
+    </section>
+
+    <!--  MAIN CONTENT -->
+    <main class="max-w-5xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-8">
+      <!-- TIPS LIST -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4 text-green-700">Shared Tips</h2>
+        <div id="tipsList" class="space-y-4">
+          <!-- Tips will load here -->
+        </div>
+      </section>
+
+      <!-- ADD NEW TIP -->
+      <section class="bg-white shadow-md p-6 rounded-lg">
+        <h2 class="text-xl font-semibold mb-4 text-green-700">
+          Share Your Tip
+        </h2>
+        <form id="tipForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium"
+              >Your Name (optional)</label
+            >
+            <input
+              type="text"
+              id="author"
+              class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Your Tip</label>
+            <textarea
+              id="tipText"
+              class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-green-400 outline-none"
+              rows="4"
+              placeholder="Write a motivational or study tip..."
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition"
+          >
+            Submit Tip
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!--  FOOTER -->
+    <footer class="bg-green-800 text-white py-10 mt-10">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-semibold mb-3">NE Students Connect</h3>
+          <p class="text-sm text-gray-200">
+            Empowering Northeastern learners through access to educational
+            resources and motivation.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-3">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li>
+              <a href="subjects.html" class="hover:underline">Subjects</a>
+            </li>
+            <li><a href="notes.html" class="hover:underline">Notes</a></li>
+            <li>
+              <a href="pastpapers.html" class="hover:underline">Past Papers</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-3">Contact</h3>
+          <p class="text-sm text-gray-200">
+            Email: nestudentsconnect@gmail.com
+          </p>
+          <p class="text-sm text-gray-200">Garissa, Kenya</p>
+        </div>
+      </div>
+      <div class="text-center text-sm text-gray-300 mt-8">
+        © 2025 NE Students Connect
+      </div>
+    </footer>
+
+    <!--  SCRIPT -->
+    <script>
+      const tipsList = document.getElementById("tipsList");
+      const tipForm = document.getElementById("tipForm");
+
+      // Load existing tips from backend
+      async function loadTips() {
+        const res = await fetch("http://localhost:5000/tips");
+        const data = await res.json();
+        tipsList.innerHTML = "";
+        data.forEach((tip) => {
+          const div = document.createElement("div");
+          div.className = "p-4 bg-white rounded-lg shadow";
+          div.innerHTML = `
+        <p class="text-gray-700 italic">"${tip.text}"</p>
+        <p class="text-sm text-right text-gray-500 mt-2">— ${
+          tip.author || "Anonymous"
+        }</p>
+      `;
+          tipsList.appendChild(div);
+        });
+      }
+
+      // Add new tip
+      tipForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const author = document.getElementById("author").value.trim();
+        const tipText = document.getElementById("tipText").value.trim();
+
+        if (!tipText) return alert("Please write a tip before submitting.");
+
+        await fetch("http://localhost:5000/tips", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ author, text: tipText }),
+        });
+
+        tipForm.reset();
+        loadTips();
+      });
+
+      loadTips();
+    </script>
+  </body>
+</html>

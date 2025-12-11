@@ -1,0 +1,37 @@
+{
+  "KCSE": [
+    {
+      "subject": "Mathematics",
+      "year": 2023,
+      "file": "./assets/files/kcse-math-2023.pdf"
+    },
+    {
+      "subject": "English",
+      "year": 2022,
+      "file": "./assets/files/kcse-english-2022.pdf"
+    },
+    {
+      "subject": "Biology",
+      "year": 2021,
+      "file": "./assets/files/kcse-biology-2021.pdf"
+    }
+  ],
+  "Garissa University": [
+    {
+      "subject": "Computer Applications",
+      "year": 2023,
+      "file": "./assets/files/college-computer-apps-2023.pdf"
+    },
+    {
+      "subject": "Database Management",
+      "year": 2022,
+      "file": "./assets/files/college-database-2022.pdf"
+    }
+    ,
+    {
+      "subject": "Object Oriented Programming",
+      "year": 2025,
+      "file": "./assets/files/college-oop-2025.pdf"
+    }
+  ]
+}
