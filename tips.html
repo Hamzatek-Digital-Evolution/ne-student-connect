@@ -14,9 +14,9 @@
       >
         <div class="flex items-center space-x-2">
           <div
-            class="w-10 h-10 bg-green-500 text-white rounded-lg flex items-center justify-center font-bold"
+            class="w-16 h-16 text-white rounded-lg flex items-center justify-center font-bold"
           >
-            LOGO
+            <img src="main-logo.png" alt="Logo" class="w-12 h-12" />
           </div>
           <span class="font-semibold text-lg">NE Students Connect</span>
         </div>
@@ -24,7 +24,9 @@
           <a href="index.html" class="hover:text-green-600">Home</a>
           <a href="subjects.html" class="hover:text-green-600">Subjects</a>
           <a href="notes.html" class="hover:text-green-600">Notes</a>
-          <a href="pastpapers.html" class="hover:text-green-600">Past Papers</a>
+          <a href="past-papers.html" class="hover:text-green-600"
+            >Past Papers</a
+          >
           <a href="study-tips.html" class="text-green-600 font-semibold"
             >Study Tips</a
           >
@@ -126,46 +128,88 @@
     </footer>
 
     <!--  SCRIPT -->
-    <script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        query,
+        orderBy,
+        getDocs,
+        addDoc,
+        serverTimestamp,
+      } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCofjA3gPTh2sKFhOelAJ_8wHfbtzCkyYw",
+        authDomain: "ne-students-connect.firebaseapp.com",
+        projectId: "ne-students-connect",
+        storageBucket: "ne-students-connect.firebasestorage.app",
+        messagingSenderId: "811243974046",
+        appId: "1:811243974046:web:fca730163ad21c0bb7ba8f",
+        measurementId: "G-DPSEDY99ZP",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
       const tipsList = document.getElementById("tipsList");
       const tipForm = document.getElementById("tipForm");
 
-      // Load existing tips from backend
+      // Load existing tips from Firestore
       async function loadTips() {
-        const res = await fetch("http://localhost:5000/tips");
-        const data = await res.json();
-        tipsList.innerHTML = "";
-        data.forEach((tip) => {
-          const div = document.createElement("div");
-          div.className = "p-4 bg-white rounded-lg shadow";
-          div.innerHTML = `
-        <p class="text-gray-700 italic">"${tip.text}"</p>
-        <p class="text-sm text-right text-gray-500 mt-2">— ${
-          tip.author || "Anonymous"
-        }</p>
-      `;
-          tipsList.appendChild(div);
-        });
+        try {
+          const q = query(collection(db, "tips"), orderBy("timestamp", "desc"));
+          const snapshot = await getDocs(q);
+          tipsList.innerHTML = "";
+          snapshot.forEach((doc) => {
+            const tip = doc.data();
+            const div = document.createElement("div");
+            div.className = "p-4 bg-white rounded-lg shadow";
+            div.innerHTML = `
+              <p class="text-gray-700 italic">"${tip.text}"</p>
+              <p class="text-sm text-right text-gray-500 mt-2">— ${
+                tip.author || "Anonymous"
+              }</p>
+            `;
+            tipsList.appendChild(div);
+          });
+        } catch (error) {
+          console.error("Error loading tips:", error);
+          tipsList.innerHTML =
+            "<p class='text-red-600'>Error loading tips. Please refresh.</p>";
+        }
       }
 
-      // Add new tip
+      // Add new tip to Firestore
       tipForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const author = document.getElementById("author").value.trim();
         const tipText = document.getElementById("tipText").value.trim();
 
-        if (!tipText) return alert("Please write a tip before submitting.");
+        if (!tipText) {
+          alert("Please write a tip before submitting.");
+          return;
+        }
 
-        await fetch("http://localhost:5000/tips", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ author, text: tipText }),
-        });
+        try {
+          await addDoc(collection(db, "tips"), {
+            author: author || "Anonymous",
+            text: tipText,
+            timestamp: serverTimestamp(),
+          });
 
-        tipForm.reset();
-        loadTips();
+          tipForm.reset();
+          loadTips();
+        } catch (error) {
+          console.error("Error adding tip:", error);
+          alert("Error submitting tip. Please try again.");
+        }
       });
 
+      // Load tips on page load
       loadTips();
     </script>
   </body>
