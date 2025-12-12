@@ -1,0 +1,75 @@
+{
+  "domain": "https://hamzatek-digital-evolution.github.io/ne-student-connect/",
+  "siteUrl": "https://hamzatek-digital-evolution.github.io/ne-student-connect/",
+  "siteName": "NE Students Connect",
+  "siteDescription": "Free educational resource hub for Northeastern Kenya students with KCSE past papers, study notes, and tips to excel academically.",
+  "siteImage": "https://hamzatek-digital-evolution.github.io/ne-student-connect/main-logo.png",
+  "contact": {
+    "email": "juniorhamka03@gmail.com",
+    "phone": "+254 790 301 457",
+    "address": {
+      "city": "Garissa",
+      "region": "Kenya",
+      "postalCode": "70100"
+    }
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/nestudentsconnect",
+    "twitter": "https://twitter.com/nestudentsconnect",
+    "instagram": "https://www.instagram.com/nestudentsconnect"
+  },
+  "pages": [
+    {
+      "title": "Home",
+      "path": "/",
+      "filename": "index.html",
+      "priority": "1.0",
+      "changefreq": "weekly"
+    },
+    {
+      "title": "Subjects",
+      "path": "/subjects.html",
+      "filename": "subjects.html",
+      "priority": "0.9",
+      "changefreq": "weekly"
+    },
+    {
+      "title": "Notes",
+      "path": "/notes.html",
+      "filename": "notes.html",
+      "priority": "0.9",
+      "changefreq": "weekly"
+    },
+    {
+      "title": "Past Papers",
+      "path": "/past-papers.html",
+      "filename": "past-papers.html",
+      "priority": "0.9",
+      "changefreq": "weekly"
+    },
+    {
+      "title": "Study Tips",
+      "path": "/tips.html",
+      "filename": "tips.html",
+      "priority": "0.8",
+      "changefreq": "weekly"
+    }
+  ],
+  "seo": {
+    "googleSearchConsoleVerification": "googleb430a937591fd409",
+    "analyticsId": "G-XXXXXXXXXX",
+    "keywords": "Hamzatek, Garissa University, Hamza Barisa, GaU Papers, study notes, past papers, northeastern kenya, students, education, learning resources",
+    "author": "Hamzatek"
+  },
+  "performance": {
+    "enableGzip": true,
+    "enableCaching": true,
+    "enableHTTPS": true,
+    "cacheExpiration": {
+      "html": "3600",
+      "css_js": "2592000",
+      "images": "2592000",
+      "fonts": "31536000"
+    }
+  }
+}

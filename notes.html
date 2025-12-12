@@ -1,40 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notes | NE Students Connect</title>
+    <meta
+      name="description"
+      content="Free comprehensive study notes for KCSE subjects organized by topic. Access quality notes from experienced educators at NE Students Connect."
+    />
+  <meta
+      name="keywords"
+      content="Hamzatek, Hamza Barisa, Garissa University, GaU Students, KCSE, study notes, past papers, northeastern kenya, students, education, learning resources"
+    />
+    <meta name="author" content="Hamzatek" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://hamzatek-digital-evolution.github.io/ne-student-connect/notes.html"
+    />
+
+    <!-- Open Graph Tags -->
+    <meta
+      property="og:title"
+      content="Study Notes by Subject - NE Students Connect"
+    />
+    <meta
+      property="og:description"
+      content="Access free, organized study notes for KCSE subjects prepared by experienced educators."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://hamzatek-digital-evolution.github.io/ne-student-connect/notes.html"
+    />
+    <meta
+      property="og:image"
+      content="https://hamzatek-digital-evolution.github.io/ne-student-connect/main-logo.png"
+    />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Study Notes by Subject - NE Students Connect"
+    />
+    <meta
+      name="twitter:description"
+      content="Free study notes for KCSE exam preparation and subject learning."
+    />
+
+    <!-- Title -->
+    <title>
+      Free Study Notes by Subject - KCSE Exam Preparation | NE Students Connect
+    </title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hamzatek-digital-evolution.github.io/ne-student-connect/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Notes",
+            "item": "https://hamzatek-digital-evolution.github.io/ne-student-connect/notes.html"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalContent",
+        "name": "KCSE Study Notes",
+        "description": "Comprehensive study notes for KCSE subjects organized by topic and difficulty level",
+        "educationalLevel": "Secondary Education",
+        "author": {
+          "@type": "Organization",
+          "name": "NE Students Connect"
+        },
+        "url": "https://hamzatek-digital-evolution.github.io/ne-student-connect/notes.html"
+      }
+    </script>
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Navbar -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
       <div
-        class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16"
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16"
       >
-        <div class="flex items-center space-x-3">
+        <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
           <div
-            class="w-16 h-16 text-white flex items-center justify-center font-bold rounded"
+            class="w-10 h-10 sm:w-12 sm:h-12 text-white flex items-center justify-center font-bold rounded"
           >
-            <img src="main-logo.png" alt="Logo" class="w-12 h-12" />
+            <img
+              src="main-logo.png"
+              alt="Logo"
+              class="w-8 h-8 sm:w-10 sm:h-10"
+            />
           </div>
-          <span class="font-bold text-xl text-gray-800"
+          <span
+            class="hidden sm:block font-bold text-lg sm:text-xl text-gray-800"
             >NE Students Connect</span
           >
-        </div>
-        <nav class="space-x-6 text-gray-900 font-medium">
-          <a href="index.html" class="hover:text-green-700">Home</a>
-          <a href="subjects.html" class="hover:text-green-700">Subjects</a>
-          <a href="notes.html" class="text-green-600 font-semibold">Notes</a>
-          <a href="past-papers.html" class="hover:text-green-700"
+        </a>
+        <nav
+          class="space-x-4 sm:space-x-6 hidden md:flex text-gray-900 font-medium"
+        >
+          <a href="index.html" class="hover:text-green-700 transition">Home</a>
+          <a href="subjects.html" class="hover:text-green-700 transition"
+            >Subjects</a
+          >
+          <a
+            href="notes.html"
+            class="text-green-600 font-semibold hover:text-green-700 transition"
+            >Notes</a
+          >
+          <a href="past-papers.html" class="hover:text-green-700 transition"
             >Past Papers</a
           >
-          <a href="tips.html" class="hover:text-green-700">Study Tips</a>
+          <a href="tips.html" class="hover:text-green-700 transition"
+            >Study Tips</a
+          >
         </nav>
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+          aria-label="Toggle menu"
+        >
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
       </div>
+      <nav
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-gray-200 max-h-0 overflow-hidden transition-all duration-300"
+      >
+        <div class="px-4 sm:px-6 py-4 space-y-3">
+          <a
+            href="index.html"
+            class="block py-2 text-gray-600 hover:text-green-700 transition"
+            onclick="closeMobileMenu()"
+          >
+            Home
+          </a>
+          <a
+            href="subjects.html"
+            class="block py-2 text-gray-600 hover:text-green-700 transition"
+            onclick="closeMobileMenu()"
+          >
+            Subjects
+          </a>
+          <a
+            href="notes.html"
+            class="block py-2 text-green-600 font-semibold hover:text-green-700 transition"
+            onclick="closeMobileMenu()"
+          >
+            Notes
+          </a>
+          <a
+            href="past-papers.html"
+            class="block py-2 text-gray-600 hover:text-green-700 transition"
+            onclick="closeMobileMenu()"
+          >
+            Past Papers
+          </a>
+          <a
+            href="tips.html"
+            class="block py-2 text-gray-600 hover:text-green-700 transition"
+            onclick="closeMobileMenu()"
+          >
+            Study Tips
+          </a>
+        </div>
+      </nav>
     </header>
 
     <!-- Hero Section -->
@@ -120,8 +284,8 @@
         <!-- Column 3: Contact -->
         <div>
           <h4 class="font-semibold text-white mb-3">Contact</h4>
-          <p class="text-sm text-gray-400">Email: info@nestudentsconnect.com</p>
-          <p class="text-sm text-gray-400 mt-1">Phone: +254 700 000 000</p>
+          <p class="text-sm text-gray-400">Email: juniorhamka03@gmail.com</p>
+          <p class="text-sm text-gray-400 mt-1">Phone: +254 790 301 457</p>
           <p class="text-sm text-gray-400 mt-3">
             Built by <span class="text-teal-400 font-semibold">Hamzatek</span>
           </p>
@@ -136,6 +300,28 @@
 
     <script src="notes.js"></script>
     <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        const isHidden = menu.classList.contains("hidden");
+        if (isHidden) {
+          menu.classList.remove("hidden");
+          menu.style.maxHeight = menu.scrollHeight + "px";
+        } else {
+          menu.style.maxHeight = "0";
+          setTimeout(() => menu.classList.add("hidden"), 300);
+        }
+      }
+
+      function closeMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.maxHeight = "0";
+        setTimeout(() => menu.classList.add("hidden"), 300);
+      }
+
+      document
+        .getElementById("mobileMenuBtn")
+        .addEventListener("click", toggleMobileMenu);
+
       // Additional script to handle loading text removal
       document.addEventListener("DOMContentLoaded", () => {
         const notesContainer = document.getElementById("notesContainer");

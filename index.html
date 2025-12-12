@@ -1,44 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NE Students Connect | Home</title>
+    <meta
+      name="description"
+      content="NE Students Connect - Access free study resources including KCSE past papers, notes, and study tips for Northeastern Kenya students."
+    />
+    <meta
+      name="keywords"
+      content="Hamzatek, Hamza Barisa, Garissa University, GaU Students, KCSE, study notes, past papers, northeastern kenya, students, education, learning resources"
+    />
+    <meta name="author" content="Hamzatek" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="language" content="en-us" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="theme-color" content="#0d9488" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://hamzatek-digital-evolution.github.io/ne-student-connect/"
+    />
+
+    <!-- Open Graph Tags -->
+    <meta
+      property="og:title"
+      content="NE Students Connect - Free Study Resources & Past Papers"
+    />
+    <meta
+      property="og:description"
+      content="Access free KCSE past papers, study notes, and educational resources for students in Northeastern Kenya."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://hamzatek-digital-evolution.github.io/ne-student-connect/"
+    />
+    <meta
+      property="og:image"
+      content="https://hamzatek-digital-evolution.github.io/ne-student-connect/main-logo.png"
+    />
+    <meta property="og:site_name" content="NE Students Connect" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="NE Students Connect - Free Study Resources"
+    />
+    <meta
+      name="twitter:description"
+      content="Access free KCSE past papers, study notes, and educational resources for students in Northeastern Kenya."
+    />
+    <meta
+      name="twitter:image"
+      content="https://hamzatek-digital-evolution.github.io/ne-student-connect/main-logo.png"
+    />
+
+    <!-- Title -->
+    <title>NE Students Connect | Free KCSE Past Papers & Study Notes</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NE Students Connect",
+        "url": "https://hamzatek-digital-evolution.github.io/ne-student-connect/",
+        "logo": "https://hamzatek-digital-evolution.github.io/ne-student-connect/main-logo.png",
+        "description": "Free educational resource hub for Northeastern Kenya students with KCSE past papers, study notes, and tips",
+        "sameAs": [
+          "https://www.facebook.com/nestudentsconnect",
+          "https://twitter.com/nestudentsconnect"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "juniorhamka03@gmail.com",
+          "telephone": "+254790301457"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Garissa",
+          "addressRegion": "Kenya",
+          "postalCode": "70100"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "NE Students Connect",
+        "url": "https://hamzatek-digital-evolution.github.io/ne-student-connect/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://hamzatek-digital-evolution.github.io/ne-student-connect/?search={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
   </head>
 
   <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
     <!--  NAVBAR -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
       <div
-        class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16"
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16"
       >
-        <!-- Logo Placeholder -->
-        <a href="index.html" class="flex items-center space-x-2">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
           <div
-            class="w-16 h-16 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-lg"
+            class="w-10 h-10 sm:w-12 sm:h-12 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-sm sm:text-lg"
           >
-            <img src="main-logo.png" alt="Logo" class="w-12 h-12" />
+            <img
+              src="main-logo.png"
+              alt="Logo"
+              class="w-8 h-8 sm:w-10 sm:h-10"
+            />
           </div>
-          <span class="font-bold text-xl text-teal-700"
+          <span
+            class="hidden sm:block font-bold text-lg sm:text-xl text-teal-700"
             >NE Students Connect</span
           >
         </a>
 
-        <!-- Nav Links -->
-        <nav class="space-x-6 hidden md:flex font-medium">
-          <a href="index.html" class="text-green-600 font-semibold">Home</a>
-          <a href="subjects.html" class="hover:text-green-600">Subjects</a>
-          <a href="notes.html" class="hover:text-green-600">Notes</a>
-          <a href="past-papers.html" class="hover:text-green-600"
+        <!-- Desktop Nav Links -->
+        <nav class="space-x-4 sm:space-x-6 hidden md:flex font-medium">
+          <a
+            href="index.html"
+            class="text-green-600 font-semibold hover:text-green-700 transition"
+            >Home</a
+          >
+          <a
+            href="subjects.html"
+            class="text-gray-600 hover:text-green-600 transition"
+            >Subjects</a
+          >
+          <a
+            href="notes.html"
+            class="text-gray-600 hover:text-green-600 transition"
+            >Notes</a
+          >
+          <a
+            href="past-papers.html"
+            class="text-gray-600 hover:text-green-600 transition"
             >Past Papers</a
           >
-          <a href="tips.html" class="hover:text-green-600">Study Tips</a>
+          <a
+            href="tips.html"
+            class="text-gray-600 hover:text-green-600 transition"
+            >Study Tips</a
+          >
         </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+          aria-label="Toggle menu"
+        >
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
       </div>
+
+      <!-- Mobile Menu -->
+      <nav
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-gray-200 max-h-0 overflow-hidden transition-all duration-300"
+      >
+        <div class="px-4 sm:px-6 py-4 space-y-3">
+          <a
+            href="index.html"
+            class="block py-2 text-green-600 font-semibold hover:text-green-700 transition"
+            onclick="closeMobileMenu()"
+          >
+            Home
+          </a>
+          <a
+            href="subjects.html"
+            class="block py-2 text-gray-600 hover:text-green-600 transition"
+            onclick="closeMobileMenu()"
+          >
+            Subjects
+          </a>
+          <a
+            href="notes.html"
+            class="block py-2 text-gray-600 hover:text-green-600 transition"
+            onclick="closeMobileMenu()"
+          >
+            Notes
+          </a>
+          <a
+            href="past-papers.html"
+            class="block py-2 text-gray-600 hover:text-green-600 transition"
+            onclick="closeMobileMenu()"
+          >
+            Past Papers
+          </a>
+          <a
+            href="tips.html"
+            class="block py-2 text-gray-600 hover:text-green-600 transition"
+            onclick="closeMobileMenu()"
+          >
+            Study Tips
+          </a>
+        </div>
+      </nav>
     </header>
 
     <!--  HERO SECTION -->
@@ -179,8 +374,8 @@
         <!-- Column 3: Contact -->
         <div>
           <h4 class="font-semibold text-white mb-3">Contact</h4>
-          <p class="text-sm text-gray-400">Email: info@nestudentsconnect.com</p>
-          <p class="text-sm text-gray-400 mt-1">Phone: +254 700 000 000</p>
+          <p class="text-sm text-gray-400">Email: juniorhamka03@gmail.com</p>
+          <p class="text-sm text-gray-400 mt-1">Phone: +254 790 301 457</p>
           <p class="text-sm text-gray-400 mt-3">
             Built by <span class="text-teal-400 font-semibold">Hamzatek</span>
           </p>
@@ -192,5 +387,29 @@
         &copy; 2025 NE Students Connect. All Rights Reserved.
       </div>
     </footer>
+
+    <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        const isHidden = menu.classList.contains("hidden");
+        if (isHidden) {
+          menu.classList.remove("hidden");
+          menu.style.maxHeight = menu.scrollHeight + "px";
+        } else {
+          menu.style.maxHeight = "0";
+          setTimeout(() => menu.classList.add("hidden"), 300);
+        }
+      }
+
+      function closeMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.maxHeight = "0";
+        setTimeout(() => menu.classList.add("hidden"), 300);
+      }
+
+      document
+        .getElementById("mobileMenuBtn")
+        .addEventListener("click", toggleMobileMenu);
+    </script>
   </body>
 </html>

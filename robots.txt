@@ -1,0 +1,16 @@
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow specific private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Specify sitemap location
+Sitemap: https://hamzatek-digital-evolution.github.io/ne-student-connect/sitemap.xml
+
+# Crawl delay (optional - in seconds, for all bots)
+# Crawl-delay: 2
+
+# Request rate (optional)
+# Request-rate: 1/10
